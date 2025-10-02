@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar paciente</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bodyAP" id="bodyAP">
+    <div class="container" id="containerL">
+        <div class="content" id="contentLogo">
+            <img src="../assets/img/logoUPA.png" alt="logo da unidade de pronto atendimento" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Cadastro Paciente</h1>
+        </div>
+        <div class="contentForm" id="contentFormPaciente">
+            <input type="text" placeholder="Nome..." class="inputForm">
+            <input type="text" placeholder="CPF..." class="inputForm">
+            <input type="text" placeholder="N° Cartão SUS" class="inputForm">
+            <button class="buttonFormSafe" id="btnAvancarPaciente">Avançar →</button>
+        </div>
+        <div class="contentForm hidden" id="contentFormClassificarRisco">
+            <select class="selectForm">
+                <option value="" selected disabled>Classificação de risco</option>
+                <option value="vermelho">Emergência</option>
+                <option value="laranja">Muito grave</option>
+                <option value="amarelo">Risco moderado</option>
+                <option value="verde">Baixa gravidade</option>
+                <option value="azul">Sem urgência</option>
+            </select>
+            <input type="text" placeholder="Sintomas" class="inputForm">
+            <div>
+                <button class="buttonFormDanger" id="btnVoltarClassificacaoRisco">← Voltar</button>
+                <button class="buttonFormSafe" id="btnAvancarClassificacaoRisco">Avançar →</button>
+            </div>
+        </div>
+        <div class="contentForm hidden" id="contentFormTriagem">
+            <button class="buttonFormSafe" id="btnTriagemPaciente">Chamar Triagem</button>
+            <button class="buttonFormDanger" id="btnVoltarTriagem">← Voltar</button>
+        </div>
+    </div>
+    <div class="container" id="containerR">
+        <img src="../assets/img/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
