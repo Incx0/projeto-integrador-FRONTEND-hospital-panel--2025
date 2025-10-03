@@ -8,7 +8,7 @@
 </head>
 <body class="bodyAP" id="bodyAP">
     <nav>
-        <input type="text" placeholder="id não informado" class="inputForm" id="inputInsertId" value="123hui123o" disabled>
+        <input type="text" placeholder="Digite o id" class="inputForm" id="inputInsertId">
         <button class="buttonFormSafe" id="btnSalvarToken">Salvar</button>
     </nav>
     <div class="container" id="containerL">
@@ -17,16 +17,13 @@
             <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Cadastro Paciente</h1>
         </div>
         <div class="contentForm" id="contentFormPaciente">
-            <a href="./src/add-paciente.html"><button class="buttonFormSafe">Cadastrar paciente</button></a>
-            <a href="./src/chamar-paciente.html"><button class="buttonFormSafe">Chamar consulta</button></a>
-        </div>
-        <div class="contentForm hidden" id="contentFormTriagemDown">
-            <button class="buttonFormDanger" id="btnVoltarTriagem">← Voltar</button>
+            <a href="./src/add-paciente/add-paciente.html"><button class="buttonFormSafe buttonRedirect">Cadastrar paciente</button></a>
+            <a href="./src/chamar-paciente/chamar-paciente.html"><button class="buttonFormSafe buttonRedirect">Chamar consulta</button></a>
         </div>
     </div>
     <div class="container" id="containerR">
         <img src="./assets/img/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
