@@ -9,6 +9,11 @@ body{
     background-color: rgb(255, 255, 255);
     overflow: hidden;
 }
+
+nav{
+    position: absolute;
+    padding: 20px 20px;
+}
 .bodyAP{
     display: flex;
     flex-direction: row;
@@ -29,6 +34,12 @@ body{
 }
 #containerR{
     background-color: rgb(5, 62, 105);
+}
+
+.containerConsulta{
+    justify-content: flex-start;
+    gap: 160px;
+    padding-top: 160px;
 }
 
 #contentLogo{
@@ -72,6 +83,16 @@ body{
 
 .inputForm:focus{
     outline: none;
+}
+
+#inputInsertId{
+    width: 100px;
+    background-color: rgb(5, 62, 105);
+}
+
+#inputId{
+    width: 100px;
+    background-color: rgb(101, 146, 180);
 }
 
 .selectForm{
@@ -123,6 +144,13 @@ body{
 .buttonFormDanger:active{
     border: none;
     background-color: rgb(160, 17, 26);
+}
+
+#btnTriagemPaciente, #contentFormConsulta{
+    height: 60px;
+    width: 400px;
+    font-size: 30px;
+    font-style: italic;
 }
 
 #bgImg{

@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar paciente</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="bodyAP" id="bodyAP">
+    <nav>
+        <input type="text" placeholder="id não informado" class="inputForm" id="inputInsertId" value="123hui123o" disabled>
+        <button class="buttonFormSafe" id="btnSalvarToken">Salvar</button>
+    </nav>
+    <div class="container" id="containerL">
+        <div class="content" id="contentLogo">
+            <img src="./assets/img/logoUPA.png" alt="logo da unidade de pronto atendimento" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Cadastro Paciente</h1>
+        </div>
+        <div class="contentForm" id="contentFormPaciente">
+            <a href="./src/add-paciente.html"><button class="buttonFormSafe">Cadastrar paciente</button></a>
+            <a href="./src/chamar-paciente.html"><button class="buttonFormSafe">Chamar consulta</button></a>
+        </div>
+        <div class="contentForm hidden" id="contentFormTriagemDown">
+            <button class="buttonFormDanger" id="btnVoltarTriagem">← Voltar</button>
+        </div>
+    </div>
+    <div class="container" id="containerR">
+        <img src="./assets/img/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
