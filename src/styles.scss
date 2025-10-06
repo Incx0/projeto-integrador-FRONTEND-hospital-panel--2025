@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Bungee+Tint&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+nav.nav1{
+    position: absolute !important;
+    top: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+nav.nav2{
+    position: absolute !important;
+    top: 20px;
+    left: 1%;
+}
+
+nav.nav3{
+    position: absolute !important;
+    top: 20px;
+    left: 89%;
+}
+
+.bodyAP{
+    display: flex;
+    flex-direction: row;
+}
+
+.bodyAPReverse{
+    flex-direction: row-reverse;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 50%;
+    flex-direction: column;
+}
+#containerR{
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+#containerR1{
+    background-color: rgb(5,62,105);
+    overflow: hidden;
+}
+
+
+#container-azul{
+    
+    background-color: rgb(5,62,105);
+    position: absolute !important;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.containerConsulta{
+    justify-content: flex-start;
+    gap: 160px;
+    padding-top: 160px;
+}
+
+#contentLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.contentForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.hidden{
+    display: none;
+}
+
+#logoImg{
+    height: 150px;
+}
+
+.inputForm {
+    width: 600px;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    border-radius: 80px;
+    border: none;
+    background-color: rgb(5, 62, 105);
+    color: whitesmoke;
+    font-style: italic;
+}
+
+.inputForm::placeholder{
+    color: whitesmoke;
+    border: none;
+    font-style: italic;
+}
+
+.inputForm:focus{
+    outline: none;
+}
+
+#inputInsertId{
+    width: 100px;
+    background-color: rgb(5, 62, 105);
+}
+
+#inputId{
+    width: 100px;
+    background-color: rgb(101, 146, 180);
+}
+
+.selectForm{
+    width: 640px;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    border-radius: 80px;
+    border: none;
+    background-color: rgb(5, 62, 105);
+    color: whitesmoke;
+    font-style: italic;
+}
+
+.selectForm::placeholder{
+    color: whitesmoke;
+    border: none;
+    font-style: italic;
+}
+
+.selectForm:focus{
+    outline: none;
+}
+
+.buttonFormSafe{
+    background-color: #053e69;
+    border-radius: 80px;
+    height: 40px;
+    color: whitesmoke;
+    padding: 0 20px 0 20px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.buttonFormSafe:active{
+    border: none;
+    background-color: #042d58;
+}
+
+.buttonFormDanger{
+    background-color: #a4071a;
+    border-radius: 80px;
+    height: 40px;
+    color: whitesmoke;
+    padding: 0 20px 0 20px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.buttonFormDanger:active{
+    border: none;
+    background-color: #820609 ;
+}
+
+#btnTriagemPaciente, #contentFormConsulta, .buttonRedirect, #btnConsultaPaciente{
+    height: 60px;
+    width: 400px;
+    font-size: 30px;
+    font-style: italic;
+}
+
+#bgImg{
+    height: 50%;
+}
+

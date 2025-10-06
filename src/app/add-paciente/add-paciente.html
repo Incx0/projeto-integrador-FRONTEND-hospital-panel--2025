@@ -1,0 +1,86 @@
+<div class="main-container">
+    <div [style.margin-right]="currentMargin" class="container" id="container-azul">
+    <img src="/assets/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
+</div>
+</div>
+<nav [style.left]="left"  class="nav1">
+    <input type="text" class="inputForm" id="inputId" [(ngModel)]="tokenHospital" [disabled]="isButtonVisible"
+        *ngIf="isContainerRight">
+</nav>
+
+<div class="bodyAP" id="bodyAP">
+
+
+
+
+    <div class="container" id="containerL">
+
+        <div class="content" id="contentLogo">
+            <img src="/assets/logoUPA.png" alt="logo da unidade de pronto atendimento" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Cadastro Paciente</h1>
+        </div>
+        <div class="contentForm" id="contentFormPaciente">
+            <div>
+                <input type="text" placeholder="Nome do Paciente" class="inputForm" [(ngModel)]="nomePaciente">
+                <span class="block"></span>
+            </div>
+
+            <div>
+                <input type="text" placeholder="CPF" class="inputForm" mask="000.000.000-00" [(ngModel)]="cpf">
+                <span class="block">A máscara será aplicada automaticamente (Ex.: 000.000.000-00) <a>*</a></span>
+            </div>
+            <div>
+                <input type="text" placeholder="N° Cartão SUS" class="inputForm" mask="000 0000 0000 0000"
+                    [(ngModel)]="sus">
+                <span class="block">A máscara será aplicada automaticamente (Ex.: 000 0000 0000 0000) <a>*</a></span>
+            </div>
+
+            <div class="botoes">
+                <button class="buttonFormDanger" id="btnVoltar" (click)="voltarHome()">← Voltar</button>
+                <button class="buttonFormSafe" id="btnAvancar" (click)="avancarClassificacao()">Avançar →</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container" id="containerR">
+
+
+        <div class="content" id="contentLogo">
+            <img src="/assets/logoUPA.png" alt="logo da unidade de pronto atendimento" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Classificação de Risco</h1>
+        </div>
+
+        <div class="contentForm" id="contentFormClassificarRisco">
+
+
+            <div>
+                <select class="selectForm" [(ngModel)]="classificacaoRisco">
+                    <option value="" selected disabled>Classificação de risco</option>
+                    <option value="vermelho">Emergência</option>
+                    <option value="laranja">Muito grave</option>
+                    <option value="amarelo">Risco moderado</option>
+                    <option value="verde">Baixa gravidade</option>
+                    <option value="azul">Sem urgência</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Sintomas" class="inputForm" [(ngModel)]="sintomas">
+            </div>
+        </div>
+
+        <div class="botoes">
+            <button class="buttonFormDanger" id="btnVoltar" (click)="voltarClassificacao()">← Voltar</button>
+            <button class="buttonFormSafe" id="btnAvancar" (click)="chamarTriagem()">Avançar →</button>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="add-paciente.js"></script>
+
+</div>

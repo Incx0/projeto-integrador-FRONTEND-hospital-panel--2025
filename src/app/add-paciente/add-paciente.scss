@@ -1,0 +1,26 @@
+#inputId{
+    width: max-content;
+}
+.block{
+    display: block !important;
+    color: #737373;
+    margin-left: 15px;
+    font-size: 13px;
+    a{
+        color: #a4071a;
+    }
+}
+#btnVoltar{
+    margin-right: 5px !important;
+}
+#btnAvancar{
+    margin-left: 5px !important;
+}
+
+.main-container{
+    position: absolute;
+    width: 100%;
+    height: 1vh;
+    display: flex;
+    justify-content: right;
+}

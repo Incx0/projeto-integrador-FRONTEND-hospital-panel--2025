@@ -1,0 +1,19 @@
+<nav class="nav3">
+    <input type="text" class="inputForm" id="inputId" [(ngModel)]="tokenHospital">
+</nav>
+<div class="bodyAP bodyAPReverse" id="bodyAP">
+
+    <div class="container containerConsulta" id="containerL">
+        <div class="content" id="contentLogo">
+            <img src="/assets/logoUPA.png" alt="logo da unidade de pronto atendimento" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Consultar Paciente</h1>
+        </div>
+        <div class="contentForm" id="contentFormConsulta">
+            <button class="buttonFormSafe" id="btnConsultaPaciente" (click)="chamarConsulta()">Chamar Consulta</button>
+        </div>
+    </div>
+    <div class="container" id="containerR1">
+        <img src="/assets/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
+    </div>
+    <script src="chamar-paciente.js"></script>
+</div>

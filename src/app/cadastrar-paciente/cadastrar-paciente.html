@@ -1,0 +1,33 @@
+
+<div class="bodyAP" id="bodyAP">
+    <nav class="nav2">
+        <input type="text" placeholder="ID do Hospital" class="inputForm" id="inputInsertId" [(ngModel)]="tokenHospital" #hospitalTokenInput [disabled]="isButtonVisible" >
+        <button class="buttonFormSafe" id="btnSalvarToken" *ngIf="!isButtonVisible" (click)="salvarToken()">Salvar</button>
+        <button class="buttonFormSafe" (click)="resetarToken()" id="btnResetarToken" *ngIf="isButtonVisible" >Resetar</button>
+        
+    </nav>
+    <div class="container" id="containerL">
+
+
+        <div class="content" id="contentLogo">
+            <img src="/assets/logoUPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="logoImg">
+            <h1 style="font-size: 40px; color: rgb(5, 62, 105); width: 170px;">Cadastro Paciente</h1>
+        </div>
+
+
+        <div class="contentForm" id="contentFormPaciente">
+          
+                <button class="buttonFormSafe buttonRedirect" (click)="cadastrarPaciente()">Cadastrar paciente</button>
+  
+        
+                <button class="buttonFormSafe buttonRedirect" (click)="chamarConsulta()">Chamar consulta</button>
+         
+        </div>
+    </div>
+    <div class="container" id="containerR1">
+        <img src="/assets/cadastroPaciente-UPA.png" alt="imagem de dois medicos na tela de cadastro de paciente" id="bgImg">
+    </div>
+    <script src="script.js"></script>
+
+    
+</div>
