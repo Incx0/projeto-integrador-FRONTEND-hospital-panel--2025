@@ -58,50 +58,66 @@ export class AddPaciente implements OnInit {
 
   }
   avancarClassificacao() {
-    this.currentMargin = '50%';
-
-    this.left = '89%';
-
-
-
+    if (this.nomePaciente == '' || this.nomePaciente == undefined || this.nomePaciente == null || this.cpf == '' || this.cpf == undefined || this.cpf == null || this.sus == '' || this.sus == undefined || this.sus == null) {
+      alert("Preencha os campos corretamente!")
+    }
+    else {
+      this.currentMargin = '50%';
+      this.left = '89%';
+    }
   }
-  chamarTriagem() {
 
+  chamarTriagem() {
     let cor_pulseiras = this.classificacaoRisco;
     let id = this.tokenHospital;
 
-    if (cor_pulseiras == '' || cor_pulseiras == undefined || cor_pulseiras == null || id == '' || id == undefined || id == null) {
+    if (cor_pulseiras == '' || cor_pulseiras == undefined || cor_pulseiras == null || id == '' || id == undefined || id == null || this.sintomas == '' || this.sintomas == undefined || this.sintomas == null) {
       alert("Preencha os campos corretamente!")
       console.log(cor_pulseiras, id)
     }
-    else if (cor_pulseiras == 'vermelho' ) {
-      alert("Paciente cadastrado com sucesso")
-      console.log(cor_pulseiras, id)
+    else if (cor_pulseiras == 'vermelho') {
+      alert("Paciente cadastrado com sucesso!");
+      this.nomePaciente = '';
+      this.cpf = '';
+      this.sus = '';
+      this.sintomas = '';
+      this.classificacaoRisco = '';
+      this.router.navigate(['/cadastrar-paciente'])
     }
-  
+
     else {
       this.chamar_triagem_service
         .chamarTriagem(this.tokenHospital, this.classificacaoRisco)
         .subscribe({
           // 1. CALLBACK DE SUCESSO (next) - Chamado SOMENTE se o HTTP retornar 200/OK
           next: async (_res: any) => {
-            if (_res.message == 'Senha do usuário atualizada com sucesso') {
+            if (_res.message == 'Fila atualizado com sucesso') {
+              alert("Paciente cadastrado com sucesso!");
               this.nomePaciente = '';
               this.cpf = '';
               this.sus = '';
-              this.sintomas = ''
+              this.sintomas = '';
               this.classificacaoRisco = '';
               this.router.navigate(['/cadastrar-paciente'])
-            } else {
-
-
+            } 
+            else{
+              alert("Erro interno");
             }
           },
+          error: (err) => {
+            // ... lógica do alert
+            alert('Não há um hospital cadastrado nesse id!');
 
+            // Aplicar o setTimeout após o alert do erro aqui
+            setTimeout(() => {
+              this.currentMargin = '0';
+            }, 0);
+          }
 
         });
     }
   }
+
   voltarClassificacao() {
     this.currentMargin = '0';
     this.isContainerRight = true;

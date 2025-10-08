@@ -33,32 +33,5 @@ export class ChamarPaciente implements OnInit {
     }
   }
 
-  chamarConsulta() {
-
-    let id = this.tokenHospital;
-
-    if ( id == '' || id == undefined || id == null) {
-      alert("Preencha os campos corretamente!")
-      console.log( id)
-    }
-    else {
-      this.chamar_consulta_service
-        .chamarConsulta(this.tokenHospital)
-        .subscribe({
-          // 1. CALLBACK DE SUCESSO (next) - Chamado SOMENTE se o HTTP retornar 200/OK
-          next: async (_res: any) => {
-            if (_res.message == 'Fila atualizado com sucesso') {
-              alert('Paciente chamado para consulta.')
-              this.router.navigate(['/cadastrar-paciente'])
-            } else {
-              alert('Não há pacientes na fila.')
-
-            }
-          },
-
-
-        });
-    }
-
-  }
+  
 }

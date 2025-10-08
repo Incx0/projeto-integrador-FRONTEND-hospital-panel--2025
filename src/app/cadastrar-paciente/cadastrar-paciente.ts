@@ -3,6 +3,7 @@ import { Component, OnInit, Inject, PLATFORM_ID, ViewChild, ElementRef } from '@
 
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { ChamarConsultaService } from '../services/consulta/chamar-consulta.service';
 
 @Component({
   selector: 'app-cadastrar-paciente',
@@ -22,7 +23,8 @@ export class CadastrarPaciente implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router: Router
+    private router: Router,
+    public chamar_consulta_service: ChamarConsultaService
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,9 @@ export class CadastrarPaciente implements OnInit {
 
     }
   }
+
+  currentMargin: string = '0';
+  left: string = '1%';
 
   // Função chamada pelo botão de Salvar/Configurar
   salvarToken(): void {
@@ -83,10 +88,11 @@ export class CadastrarPaciente implements OnInit {
     }
   }
 
-  chamarConsulta(): void {
+  chamarConsultaArrasto(): void {
     // Se você quer que essa rota também dependa do token:
     if (this.tokenHospital.trim()) {
-      this.router.navigate(['/chamar-paciente']);
+      this.currentMargin = '50%';
+
     } else {
       this.tokenError = true;
       alert('O token do hospital é necessário para chamar consultas');
@@ -100,7 +106,48 @@ export class CadastrarPaciente implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem('tokenHospital');
       this.isButtonVisible = false;
-      
+
     }
   }
+
+
+
+  chamarConsulta() {
+
+    let id = this.tokenHospital;
+
+    if (id == '' || id == undefined || id == null) {
+      alert("Preencha os campos corretamente!")
+      console.log(id)
+    }
+    else {
+      this.chamar_consulta_service
+        .chamarConsulta(this.tokenHospital)
+        .subscribe({
+          // 1. CALLBACK DE SUCESSO (next) - Chamado SOMENTE se o HTTP retornar 200/OK
+          next: async (_res: any) => {
+            if (_res.message == 'Fila atualizado com sucesso') {
+              alert('Paciente chamado para consulta.')
+              window.location.reload();
+            } else {
+              alert('Não há pacientes na fila.')
+              window.location.reload();
+            }
+          },
+          error: (err) => {
+            // ... lógica do alert
+            alert('Não há um hospital cadastrado nesse id!');
+            window.location.reload();
+            // Aplicar o setTimeout após o alert do erro aqui
+
+          }
+        });
+
+
+    }
+  }
+
+
+
+
 }
